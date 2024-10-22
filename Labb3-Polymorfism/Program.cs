@@ -31,8 +31,9 @@ namespace Labb3_Polymorfism
                       orderby s.Area()
                       select s;
 
-            Array.ForEach<Geometry>(qry.ToArray<Geometry>(),
-                s => Console.WriteLine(s.Area()));
+            Console.WriteLine("\nSorting by Area, starting with the lowest number:");
+            Array.ForEach(qry.ToArray(),
+                s => Console.WriteLine($"Area of {s.Name}: {s.Area().ToString("# 'cm3'")}"));
         }
     }
 
